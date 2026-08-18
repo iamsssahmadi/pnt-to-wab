@@ -133,7 +133,6 @@ function buildResultsTable() {
         <span class="model-tag">[${modelType}]</span>
       </td>
       <td class="col-score"><span class="score-val">—</span></td>
-      <td class="col-max">${maxVal}</td>
       <td class="col-r2">${r2.toFixed(3)}</td>
       <td class="col-bar">
         <div class="bar-track">
