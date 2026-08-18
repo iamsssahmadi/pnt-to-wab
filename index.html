@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PNT to WAB Predictor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>PNT&nbsp;→&nbsp;WAB Subscore Predictor</h1>
+    <p class="subtitle">Predicts 13 Western Aphasia Battery subscores from Philadelphia Naming Test error patterns</p>
+  </div>
+</header>
+
+<main class="layout">
+
+  <section class="panel input-panel">
+
+    <div class="privacy-banner">
+      <strong>Private by design.</strong> All predictions run locally in your browser.
+      Nothing you enter is sent, logged, or stored anywhere — the page works even offline
+      once loaded.
+    </div>
+
+    <fieldset class="card">
+      <legend>PNT Error Counts (0–175)</legend>
+      <div id="pnt-inputs" class="field-grid"></div>
+    </fieldset>
+
+    <div class="btn-row">
+      <button id="btn-predict" class="btn btn-primary" disabled>Loading models…</button>
+      <button id="btn-clear" class="btn btn-secondary">Clear</button>
+      <button id="btn-export" class="btn btn-export" disabled>Export CSV</button>
+    </div>
+
+    <p id="status" class="status-line">Loading models…</p>
+
+    <details class="model-info">
+      <summary>About this model</summary>
+      <p>
+        Trained on C-STAR participant data using 5-fold cross-validation with
+        Optuna hyperparameter tuning. Each subscore uses whichever of
+        RandomForest, XGBoost, LightGBM, CatBoost, or ElasticNet performed best
+        under cross-validation. Models were converted to ONNX and run entirely
+        client-side via onnxruntime-web — no server-side inference, no network
+        calls after the page loads.
+      </p>
+      <p class="disclaimer">
+        For research and clinical decision-support purposes only.
+        Not a substitute for a full WAB administration or professional clinical judgment.
+      </p>
+    </details>
+
+  </section>
+
+  <section class="panel results-panel">
+    <div class="card results-card">
+      <div class="results-header">
+        <h2>Predicted WAB Subscores</h2>
+      </div>
+      <div class="table-wrap">
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th class="col-name">Subscore</th>
+              <th class="col-score">Score</th>
+              <th class="col-max">Max</th>
+              <th class="col-r2">CV R²</th>
+              <th class="col-bar">Performance</th>
+            </tr>
+          </thead>
+          <tbody id="results-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>PNT-to-WAB Predictor &middot; runs 100% in-browser &middot; no data leaves your device</p>
+</footer>
+
+<script src="lib/ort.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
