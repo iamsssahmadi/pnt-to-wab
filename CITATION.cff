@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "PNT to WAB Subscore Predictor"
+abstract: >-
+  A client-side web application that predicts 13 Western Aphasia Battery
+  subscores from Philadelphia Naming Test error-type counts alone, using
+  gradient-boosted and linear models exported to ONNX and run in-browser.
+type: software
+authors:
+  - family-names: Ahmadi
+    given-names: Seyed Saeed
+    orcid: "https://orcid.org/0009-0005-6961-0573"
+    affiliation: "University of South Carolina"
+repository-code: "https://github.com/iamsssahmadi/pnt-to-wab"
+url: "https://iamsssahmadi.github.io/pnt-to-wab/"
+license: MIT
+year: 2026
+keywords:
+  - aphasia
+  - Philadelphia Naming Test
+  - Western Aphasia Battery
+  - speech-language pathology
+  - machine learning
