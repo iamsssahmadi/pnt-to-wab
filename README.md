@@ -6,6 +6,10 @@ A static, client-side web app that predicts 13 Western Aphasia Battery (WAB)
 subscores from Philadelphia Naming Test (PNT) error-type counts alone (no
 clinical covariates) — matching the model reported in the manuscript.
 
+Companion code for: **Ahmadi, S.**, Newman-Norlund, R., …, Fridriksson, J. (2026).
+*PNT Error Profiles Predict Expressive but Not Receptive WAB-R Performance.*
+Manuscript in preparation.
+
 ## How it works
 
 - `index.html` / `style.css` — UI: PNT count inputs and a results table.
@@ -55,6 +59,10 @@ python -m http.server 8000
 
 (Serving over `file://` directly will not work because browsers block
 `fetch()` of local files under that scheme; use any static file server.)
+## License
+
+MIT — see [LICENSE](LICENSE).
+
 ## Disclaimer
 
 For research and clinical decision-support purposes only. Not a substitute
