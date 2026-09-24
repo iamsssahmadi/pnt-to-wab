@@ -1,5 +1,7 @@
 # PNT → WAB Subscore Predictor
 
+**Live demo:** https://iamsssahmadi.github.io/pnt-to-wab/ (runs entirely in your browser)
+
 A static, client-side web app that predicts 13 Western Aphasia Battery (WAB)
 subscores from Philadelphia Naming Test (PNT) error-type counts alone (no
 clinical covariates) — matching the model reported in the manuscript.
@@ -46,7 +48,7 @@ connected-speech outcomes at the top of this table.
 No build step or dependencies are required — it's static HTML/JS.
 
 ```bash
-cd site
+# from the repo root
 python -m http.server 8000
 # open http://localhost:8000
 ```
